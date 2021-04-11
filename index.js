@@ -42,8 +42,9 @@ const requestTrello = async (verb, url, body = null, extraParams = null) => {
 
 const getCard = async (branchName) => {
   return requestTrello("get", `/1/search`, {
-    query: `{${branchName}}`,
+    query: `name=${branchName}`,
     idBoards: [boardID],
+    modelTypes: "cards",
     partial: true,
   });
 };
