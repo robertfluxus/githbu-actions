@@ -1,6 +1,7 @@
 const core = require("@actions/core");
 const github = require("@actions/github");
 const axios = require("axios");
+const util = require("util");
 
 const trelloKey = core.getInput("trello-key", { required: true });
 const trelloToken = core.getInput("trello-token", { required: true });
