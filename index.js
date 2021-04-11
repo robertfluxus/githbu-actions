@@ -8,10 +8,6 @@ const trelloToken = core.getInput("trello-token", { required: true });
 const boardID = core.getInput("board-id", { required: true });
 const listID = core.getInput("list-id", { required: true });
 
-const trelloClient = axios.create({
-  baseUrl: "https://api.trello.com",
-});
-
 const requestTrello = async (verb, url, body = null, extraParams = null) => {
   try {
     const params = {
@@ -20,12 +16,13 @@ const requestTrello = async (verb, url, body = null, extraParams = null) => {
       token: trelloToken,
     };
 
-    const res = await trelloClient.request({
+    const res = await axios({
+      url: `https://api.trello.com${url}`,
       method: verb,
-      url: url,
       data: body || {},
       params: params,
     });
+
     core.debug(
       `${verb} to ${url} completed with status: ${res.status}.  data follows:`
     );
