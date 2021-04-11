@@ -59,8 +59,7 @@ console.log(branchName);
 
 branchName = branchName.split("/");
 branchName = branchName[branchName.lenght - 1];
-
-console.log()(async () => {
+console.log(branchName)(async () => {
   try {
     if (!(github.context.eventName === "create")) {
       core.info(`event not supported, skipping action.`);
