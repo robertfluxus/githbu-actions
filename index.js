@@ -57,9 +57,9 @@ const moveCard = async (cardID, listID) => {
 let branchName = github.context.ref;
 
 branchName = branchName.split("/");
-branchName = branchName[branchName.length - 1]
+branchName = branchName[branchName.length - 1];
 
-(async () => {
+const run = async () => {
   try {
     if (!(github.context.eventName === "create")) {
       core.info(`event not supported, skipping action.`);
@@ -73,4 +73,6 @@ branchName = branchName[branchName.length - 1]
     //failure will stop PR from being mergeable if that setting enabled on the repo.  there is not currently a neutral exit in actions v2.
     core.setFailed(error.message);
   }
-})();
+};
+
+run();
