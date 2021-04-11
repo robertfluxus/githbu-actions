@@ -1,0 +1,15 @@
+name: 'Attach trello card'
+description: 'Attach a trello card to a branch on creation'
+inputs:
+  trello-key:
+    description: '(public) Trello auth key for account'
+    required: true
+  trello-token:
+    description: 'secret Trello auth token for account'
+    required: true
+runs:
+  using: 'node12'
+  main: 'index.js'
+branding:
+  icon: 'paperclip'  
+  color: 'blue'
