@@ -65,6 +65,10 @@ const run = async () => {
       return;
     }
 
+    let nameRgx = /[A-Z]{2}[0-9]*/;
+    if (!nameRgx.test(branchName)) {
+      core.info("card name doesn't match regex");
+    }
     card = await getCard(branchName);
     console.log(card);
     await moveCard(card.cards[0].id, listID);
