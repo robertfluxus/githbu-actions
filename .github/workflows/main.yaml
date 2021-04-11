@@ -1,0 +1,17 @@
+on: [create]
+
+jobs:
+  move_card_job:
+    runs-on: ubuntu-latest
+    name: A job that moves a trello card in the right list on branch creation
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: MoveCard
+        uses: ./
+        id: test
+          with:
+          trello-key: ${{ secrets.TRELLO_KEY }}
+          trello-token: ${{ secrets.TRELLO_TOKEN }}
+          board-id: 10lAU3Ki
+          list-id: 6058f8f8351e893d3624ac61
