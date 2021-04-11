@@ -13,5 +13,5 @@ jobs:
         with:
           trello-key: ${{ secrets.TRELLO_KEY }}
           trello-token: ${{ secrets.TRELLO_TOKEN }}
-          board-id: 10lAU3Ki
+          board-id: 6058f8f8351e893d3624ac5e
           list-id: 6058f8f8351e893d3624ac61
