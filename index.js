@@ -68,6 +68,7 @@ const run = async () => {
     }
 
     card = await getCard(branchName);
+    console.log(card);
     await moveCard(card.id, listID);
   } catch (error) {
     core.error(util.inspect(error));
