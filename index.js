@@ -32,7 +32,7 @@ const requestTrello = async (verb, url, body = null, extraParams = null) => {
     core.debug(util.inspect(res.data));
     return res.data;
   } catch (err) {
-    core.error(`${verb} to ${url} errored: ${err}`);
+    core.error(`${verb} to ${url} with params ${params} errored: ${err}`);
     if (err.response) {
       core.error(util.inspect(err.response.data));
     }
@@ -42,7 +42,7 @@ const requestTrello = async (verb, url, body = null, extraParams = null) => {
 
 const getCard = async (branchName) => {
   return requestTrello("get", `/1/search`, {
-    query: `name=${branchName}`,
+    query: `name:"${branchName}"`,
     idBoards: [boardID],
     modelTypes: "cards",
     partial: true,
