@@ -55,11 +55,11 @@ const moveCard = async (cardID, listID) => {
 };
 
 let branchName = github.context.ref;
-console.log(branchName);
 
 branchName = branchName.split("/");
-branchName = branchName[branchName.lenght - 1];
-console.log(branchName)(async () => {
+branchName = branchName[branchName.length - 1]
+
+(async () => {
   try {
     if (!(github.context.eventName === "create")) {
       core.info(`event not supported, skipping action.`);
