@@ -33,7 +33,9 @@ const requestTrello = async (verb, url, body = null, extraParams = null) => {
     core.debug(util.inspect(res.data));
     return res.data;
   } catch (err) {
-    core.error(`${verb} to ${url} with params ${params} errored: ${err}`);
+    core.error(
+      `${verb} to ${url} with body ${body} and params ${extraParams} errored: ${err}`
+    );
     if (err.response) {
       core.error(util.inspect(err.response.data));
     }
