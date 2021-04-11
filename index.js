@@ -55,8 +55,9 @@ const moveCard = async (cardID, listID) => {
 };
 
 let branchName = github.context.ref;
-branchName = branchName.split("/")[branchName.length - 1];
 console.log(branchName);
+
+branchName = branchName.split("/")[branchName.length - 1];
 
 (async () => {
   try {
