@@ -70,7 +70,7 @@ const run = async () => {
 
     card = await getCard(branchName);
     console.log(card);
-    await moveCard(card.id, listID);
+    await moveCard(card.cards[0].id, listID);
   } catch (error) {
     core.error(util.inspect(error));
     //failure will stop PR from being mergeable if that setting enabled on the repo.  there is not currently a neutral exit in actions v2.
