@@ -7,6 +7,11 @@ inputs:
   trello-token:
     description: 'secret Trello auth token for account'
     required: true
+  board-id:
+    description: "the id of the board the card is in"
+    required: true
+  list-id:
+    description: "id of the list in which the card should be moved"
 runs:
   using: 'node12'
   main: 'index.js'
