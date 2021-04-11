@@ -9,7 +9,7 @@ const boardID = core.getInput("board-id", { required: true });
 const listID = core.getInput("list-id", { required: true });
 
 const trelloClient = axios.create({
-  baseUrl: "http://api.trello.com",
+  baseUrl: "https://api.trello.com",
 });
 
 const requestTrello = async (verb, url, body = null, extraParams = null) => {
