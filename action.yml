@@ -1,4 +1,4 @@
-name: 'Attach trello card'
+name: 'Move trello to list'
 description: 'Attach a trello card to a branch on creation'
 inputs:
   trello-key:
